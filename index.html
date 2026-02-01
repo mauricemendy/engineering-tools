@@ -283,13 +283,22 @@
       color: var(--color-primary-dark);
     }
 
-    /* Tool Features */
-    .tool-features {
-      font-size: 13px;
-      color: var(--color-gray-500);
+    /* Feature Tags */
+    .feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
       margin-bottom: var(--space-4);
-      line-height: 1.6;
       flex-grow: 1;
+    }
+
+    .feature-tag {
+      background: var(--color-gray-50);
+      color: var(--color-gray-700);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 6px;
     }
   </style>
 </head>
@@ -298,7 +307,7 @@
     <div class="container">
       <div class="header-content">
         <a href="https://mauricemendy.com" class="logo">Maurice Mendy</a>
-        <a href="https://mauricemendy.com" class="header-link">Blog →</a>
+        <a href="https://mauricemendy.com" class="header-link">Blog personnel →</a>
       </div>
     </div>
   </header>
@@ -329,9 +338,12 @@
             Détermine la catégorie réglementaire des équipements et identifie
             les exigences de certification selon la directive européenne 2014/68/EU.
           </p>
-          <p class="tool-features">
-            Classification DESP automatique · Calcul de catégorie (I à IV) · Exigences de conformité · Support multi-fluides
-          </p>
+          <div class="feature-tags">
+            <span class="feature-tag">Classification automatique</span>
+            <span class="feature-tag">Catégories I à IV</span>
+            <span class="feature-tag">Exigences conformité</span>
+            <span class="feature-tag">Multi-fluides</span>
+          </div>
           <a href="https://mauricemendy.github.io/desp-calculator/" class="btn btn-primary" target="_blank">
             Ouvrir l'outil
           </a>
@@ -349,9 +361,12 @@
             Évalue les contraintes thermiques, vérifie la conformité aux codes de conception,
             et génère des rapports détaillés selon ASME B31.3.
           </p>
-          <p class="tool-features">
-            Classification automatique des lignes · Analyse multi-matériaux · Calculs d'expansion thermique · Export des résultats
-          </p>
+          <div class="feature-tags">
+            <span class="feature-tag">Vérification B31-3</span>
+            <span class="feature-tag">Multi-matériaux</span>
+            <span class="feature-tag">Template pré-configuré</span>
+            <span class="feature-tag">Export résultats</span>
+          </div>
           <a href="https://piping-flex-calc.vercel.app/" class="btn btn-primary" target="_blank">
             Ouvrir l'outil
           </a>
@@ -361,17 +376,18 @@
         <div class="tool-card">
           <h2 class="tool-title">PSV Reaction Force</h2>
           <div class="tool-meta">
-            <span class="badge badge-info">API 520</span>
             <span class="badge badge-success">Production</span>
           </div>
           <p class="tool-description">
             Calculateur de forces de réaction pour soupapes de sécurité (PSV).
             Détermine les efforts dynamiques lors du déclenchement et optimise
-            le dimensionnement des supports selon API 520.
+            le dimensionnement des supports.
           </p>
-          <p class="tool-features">
-            Calcul des forces de réaction · Analyse des conditions critiques · Recommandations de supportage · Conformité API 520
-          </p>
+          <div class="feature-tags">
+            <span class="feature-tag">Forces de réaction</span>
+            <span class="feature-tag">Méthode simplifiée</span>
+            <span class="feature-tag">Batch mode</span>
+          </div>
           <a href="https://mauricemendy.github.io/psvReactionForce/" class="btn btn-primary" target="_blank">
             Ouvrir l'outil
           </a>
