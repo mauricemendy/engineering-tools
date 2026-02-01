@@ -6,13 +6,20 @@
   <title>Outils d'Ingénierie - Maurice Mendy</title>
   <style>
     :root {
-      /* Colors */
-      --color-primary: #4F7CFF;
-      --color-primary-dark: #3D63E5;
-      --color-success: #10B981;
-      --color-warning: #F59E0B;
-      --color-error: #EF4444;
-      --color-info: #06B6D4;
+      /* Colors - Primary Teal */
+      --color-primary: #0D9488;
+      --color-primary-dark: #0F766E;
+      --color-primary-light: #F0FDFA;
+
+      /* Colors - Accent Black (CTAs) */
+      --color-accent: #111827;
+      --color-accent-dark: #1F2937;
+      --color-accent-darker: #374151;
+
+      /* Semantic */
+      --color-success: #0D9488;
+      --color-warning: #D97706;
+      --color-error: #DC2626;
       
       /* Neutrals */
       --color-gray-50: #F9FAFB;
@@ -41,16 +48,17 @@
       --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
       
       /* Shadows */
-      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-      --shadow-md: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-      --shadow-lg: 0 4px 6px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.06);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.03);
+      --shadow-lg: 0 10px 15px rgba(0,0,0,0.05), 0 4px 6px rgba(0,0,0,0.03);
       
       /* Border Radius */
       --radius-md: 8px;
       --radius-lg: 12px;
       
       /* Transitions */
-      --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: 150ms ease;
+      --transition-base: 150ms ease;
     }
 
     * {
@@ -176,21 +184,8 @@
     }
 
     .tool-card:hover {
-      transform: translateY(-2px);
+      transform: translateY(-1px);
       box-shadow: var(--shadow-lg);
-    }
-
-    .tool-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      margin-bottom: var(--space-4);
-      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-      color: white;
     }
 
     .tool-title {
@@ -206,7 +201,6 @@
       line-height: 20px;
       color: var(--color-gray-700);
       margin-bottom: var(--space-4);
-      flex-grow: 1;
     }
 
     .tool-meta {
@@ -227,13 +221,13 @@
     }
 
     .badge-info {
-      background: #DBEAFE;
-      color: #2563EB;
+      background: var(--color-gray-100);
+      color: var(--color-gray-700);
     }
 
     .badge-success {
-      background: #ECFDF5;
-      color: #059669;
+      background: var(--color-primary);
+      color: white;
     }
 
     .btn {
@@ -252,17 +246,17 @@
     }
 
     .btn-primary {
-      background: var(--color-primary);
+      background: var(--color-accent);
       color: white;
       box-shadow: var(--shadow-sm);
     }
 
     .btn-primary:hover {
-      background: var(--color-primary-dark);
+      background: var(--color-accent-dark);
     }
 
     .btn-primary:active {
-      background: #2D4FCC;
+      background: var(--color-accent-darker);
     }
 
     /* Footer */
@@ -289,26 +283,13 @@
       color: var(--color-primary-dark);
     }
 
-    /* Feature List */
-    .feature-list {
-      list-style: none;
-      margin-bottom: var(--space-4);
-    }
-
-    .feature-item {
+    /* Tool Features */
+    .tool-features {
       font-size: 13px;
-      color: var(--color-gray-700);
-      padding: var(--space-1) 0;
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-    }
-
-    .feature-item::before {
-      content: "✓";
-      color: var(--color-success);
-      font-weight: 700;
-      font-size: 14px;
+      color: var(--color-gray-500);
+      margin-bottom: var(--space-4);
+      line-height: 1.6;
+      flex-grow: 1;
     }
   </style>
 </head>
@@ -335,76 +316,64 @@
 
     <div class="container">
       <div class="tools-grid">
-        
-        <!-- Piping Flexibility Calculator -->
-        <div class="tool-card">
-          <div class="tool-icon">📐</div>
-          <h2 class="tool-title">Piping Flexibility Calculator</h2>
-          <div class="tool-meta">
-            <span class="badge badge-info">ASME B31.3</span>
-            <span class="badge badge-success">Production</span>
-          </div>
-          <p class="tool-description">
-            Calculateur d'analyse de flexibilité pour la tuyauterie industrielle. 
-            Évalue les contraintes thermiques, vérifie la conformité aux codes de conception, 
-            et génère des rapports détaillés selon ASME B31.3.
-          </p>
-          <ul class="feature-list">
-            <li class="feature-item">Classification automatique des lignes</li>
-            <li class="feature-item">Analyse multi-matériaux</li>
-            <li class="feature-item">Calculs d'expansion thermique</li>
-            <li class="feature-item">Export des résultats</li>
-          </ul>
-          <a href="https://piping-flex-calc.vercel.app/" class="btn btn-primary" target="_blank">
-            Ouvrir l'outil →
-          </a>
-        </div>
-
-        <!-- PSV Reaction Force Calculator -->
-        <div class="tool-card">
-          <div class="tool-icon">⚡</div>
-          <h2 class="tool-title">PSV Reaction Force</h2>
-          <div class="tool-meta">
-            <span class="badge badge-info">API 520</span>
-            <span class="badge badge-success">Production</span>
-          </div>
-          <p class="tool-description">
-            Calculateur de forces de réaction pour soupapes de sécurité (PSV). 
-            Détermine les efforts dynamiques lors du déclenchement et optimise 
-            le dimensionnement des supports selon API 520.
-          </p>
-          <ul class="feature-list">
-            <li class="feature-item">Calcul des forces de réaction</li>
-            <li class="feature-item">Analyse des conditions critiques</li>
-            <li class="feature-item">Recommandations de supportage</li>
-            <li class="feature-item">Conformité API 520</li>
-          </ul>
-          <a href="https://mauricemendy.github.io/psvReactionForce/" class="btn btn-primary" target="_blank">
-            Ouvrir l'outil →
-          </a>
-        </div>
 
         <!-- DESP Calculator -->
         <div class="tool-card">
-          <div class="tool-icon">🔧</div>
           <h2 class="tool-title">DESP Calculator</h2>
           <div class="tool-meta">
             <span class="badge badge-info">Directive 2014/68/EU</span>
             <span class="badge badge-success">Production</span>
           </div>
           <p class="tool-description">
-            Calculateur de conformité DESP (Directive Équipements Sous Pression). 
-            Détermine la catégorie réglementaire des équipements et identifie 
+            Calculateur de conformité DESP (Directive Équipements Sous Pression).
+            Détermine la catégorie réglementaire des équipements et identifie
             les exigences de certification selon la directive européenne 2014/68/EU.
           </p>
-          <ul class="feature-list">
-            <li class="feature-item">Classification DESP automatique</li>
-            <li class="feature-item">Calcul de catégorie (I à IV)</li>
-            <li class="feature-item">Exigences de conformité</li>
-            <li class="feature-item">Support multi-fluides</li>
-          </ul>
+          <p class="tool-features">
+            Classification DESP automatique · Calcul de catégorie (I à IV) · Exigences de conformité · Support multi-fluides
+          </p>
           <a href="https://mauricemendy.github.io/desp-calculator/" class="btn btn-primary" target="_blank">
-            Ouvrir l'outil →
+            Ouvrir l'outil
+          </a>
+        </div>
+
+        <!-- Piping Flexibility Calculator -->
+        <div class="tool-card">
+          <h2 class="tool-title">Piping Flexibility Calculator</h2>
+          <div class="tool-meta">
+            <span class="badge badge-info">ASME B31.3</span>
+            <span class="badge badge-success">Production</span>
+          </div>
+          <p class="tool-description">
+            Calculateur d'analyse de flexibilité pour la tuyauterie industrielle.
+            Évalue les contraintes thermiques, vérifie la conformité aux codes de conception,
+            et génère des rapports détaillés selon ASME B31.3.
+          </p>
+          <p class="tool-features">
+            Classification automatique des lignes · Analyse multi-matériaux · Calculs d'expansion thermique · Export des résultats
+          </p>
+          <a href="https://piping-flex-calc.vercel.app/" class="btn btn-primary" target="_blank">
+            Ouvrir l'outil
+          </a>
+        </div>
+
+        <!-- PSV Reaction Force Calculator -->
+        <div class="tool-card">
+          <h2 class="tool-title">PSV Reaction Force</h2>
+          <div class="tool-meta">
+            <span class="badge badge-info">API 520</span>
+            <span class="badge badge-success">Production</span>
+          </div>
+          <p class="tool-description">
+            Calculateur de forces de réaction pour soupapes de sécurité (PSV).
+            Détermine les efforts dynamiques lors du déclenchement et optimise
+            le dimensionnement des supports selon API 520.
+          </p>
+          <p class="tool-features">
+            Calcul des forces de réaction · Analyse des conditions critiques · Recommandations de supportage · Conformité API 520
+          </p>
+          <a href="https://mauricemendy.github.io/psvReactionForce/" class="btn btn-primary" target="_blank">
+            Ouvrir l'outil
           </a>
         </div>
 
