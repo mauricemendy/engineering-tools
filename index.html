@@ -6,6 +6,11 @@
   <title>Outils d'Ingénierie - Maurice Mendy</title>
   <style>
     :root {
+      /* Colors - Brand (Logo) */
+      --color-brand-dark: #143F3E;
+      --color-brand-mint: #A2D0B1;
+      --color-brand-white: #FEFEFE;
+
       /* Colors - Primary Teal */
       --color-primary: #0D9488;
       --color-primary-dark: #0F766E;
@@ -116,22 +121,29 @@
     .hero {
       padding: var(--space-12) 0;
       text-align: center;
+      background: var(--color-brand-dark);
+    }
+
+    .hero-logo {
+      max-width: 280px;
+      height: auto;
+      margin-bottom: var(--space-6);
     }
 
     h1 {
       font-size: 32px;
       line-height: 40px;
       font-weight: 700;
-      color: var(--color-gray-900);
+      color: var(--color-brand-white);
       margin-bottom: var(--space-4);
     }
 
     .hero-description {
       font-size: 16px;
       line-height: 24px;
-      color: var(--color-gray-700);
+      color: var(--color-brand-mint);
       max-width: 600px;
-      margin: 0 auto var(--space-8);
+      margin: 0 auto;
     }
 
     /* Tools Grid */
@@ -158,6 +170,10 @@
 
       .hero {
         padding: 80px 0;
+      }
+
+      .hero-logo {
+        max-width: 360px;
       }
     }
 
@@ -315,10 +331,11 @@
   <main>
     <div class="hero">
       <div class="container">
+        <img src="logo.png" alt="PipingStressCopilot" class="hero-logo">
         <h1>Outils d'Ingénierie</h1>
         <p class="hero-description">
-          Calculateurs techniques développés pour l'analyse de flexibilité de tuyauterie, 
-          les calculs de forces de réaction et l'évaluation de la conformité DESP.
+          Calculateurs techniques pour l'analyse de flexibilité,
+          les forces de réaction et la conformité DESP.
         </p>
       </div>
     </div>
